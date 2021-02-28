@@ -8,33 +8,32 @@
     <title>Pomodoro Timer</title>
   </head>
   <body>
-    <nav>
-      <div id="date">1 March 2021</div>
-      <div id="time">00:00</div>
+    <nav class="center--flex">
+      <div id="date"></div>
+      <div id="time"></div>
     </nav>
 
     <main>
       <section>
-
         <div class="task">
-          <div class="task--head">
-            <div class="logo">
+          <div class="center--flex task--head">
+            <div class="logo center--flex">
               <p>Pomotask</p>
               <img src="/public/images/tomato.png" alt="pomodorologo" />
             </div>
-            <div class="task--close">
+            <div id="task--close">
                 <img src="/public/images/cancel-1.png" alt="close">
             </div>
           </div>
 
           <div class="task--body">
-            <h2 class="task--name">Create Pomodoro Timer</h2>
-            <h3 class="task--timer">25:00</h3>
+            <h2 id="task--name">Create Pomodoro Timer</h2>
+            <h3 id="task--timer">25:00</h3>
           </div>
 
           <div class="task--btn--container">
-            <button class="task--btn">Pause</button>
-            <button class="task--btn">Stop</button>
+            <button class="task--btn" id="pause--btn">Start</button>
+            <button class="task--btn" id="stop--btn">Stop</button>
           </div>
         </div>
       </section>
@@ -60,11 +59,13 @@
             </form>
            
         </aside>
+
+          <audio src="./Project03/boom.wav"></audio>
             
         -->
     </main>
 
-    <audio src="./Project03/boom.wav"></audio>
+  
     <script src="app.js"></script>
   </body>
 </html>

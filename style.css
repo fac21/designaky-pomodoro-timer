@@ -1,3 +1,7 @@
+:root{
+  --maincolor: lightgray;
+}
+
 * {
   margin: 0px;
   padding: 0pc;
@@ -9,18 +13,31 @@
   align-items: center;
 }
 
-nav,
-.task--head {
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
 .display--flex--column {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 }
+
+
+nav,
+.task--head {
+  justify-content: space-between;
+}
+
+
+nav{
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.task{
+  background-color: var(--maincolor);
+  padding: 10px;
+  border-radius: 10px;
+}
+
 
 .task--head img {
   width: 15px;
@@ -32,8 +49,12 @@ nav,
   padding: 0.5px;
 }
 
+
+.task--btn--container{
+  justify-content: center;
+}
 .task--btn {
-  margin-top: 10px;
+  margin: 10px 5px 0px 5px;
   width: 60px;
   padding: 2px;
 }

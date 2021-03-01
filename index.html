@@ -14,8 +14,9 @@
     </nav>
 
     <main class="display--flex--column">
-      <section>
-        <div class="task">
+      <section class="task">
+
+        <div class="task--head">
           <div class="display--flex--row task--head">
             <div class="display--flex--row logo">
               <p>Pomotask</p>
@@ -26,7 +27,7 @@
             </div>
           </div>
 
-          <div class="task--body">
+          <div class="display--flex--column task--body">
             <h2 id="task--name">Create Pomodoro Timer</h2>
             <h3 id="task--timer">25:00</h3>
             <div id="set--timer-section">
@@ -49,7 +50,7 @@
             </div>
           </div>
 
-          <div class="center--flex--row task--btn--container">
+          <div class="display--flex--row task--btn--container">
             <button class="task--btn" id="start--pause--btn">Start</button>
             <button class="task--btn" id="stop--btn">Stop</button>
             <button class="task--btn" id="reset--btn">Reset</button>

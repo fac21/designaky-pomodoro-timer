@@ -2,8 +2,9 @@
 const currentDate = document.getElementById("date");
 const currentTime = document.getElementById("time");
 
-const taskTimer = document.getElementById('task--timer');
-const startPausebtn = document.getElementById("pause--btn");
+const taskTimer = document.getElementById("task--timer");
+const startPausebtn = document.getElementById("start--pause--btn");
+const stopbtn = document.getElementById("reset--btn");
 
 // Date section and time
 
@@ -54,29 +55,45 @@ const playSound = () => {
 */
 
 // Countdown
+
 let timer = 25;
 let intervalStart = null;
 
 const countdown = () => {
   timer = timer * 60 - 1;
-  let timeMin = Math.floor(timer/60)
-  let timeSec = timer%60
+  let timeMin = Math.floor(timer / 60);
+  let timeSec = Math.floor(timer % 60);
 
-  taskTimer.innerText = `${formatTime(timeMin)}:${formatTime(timeSec)}`
+  taskTimer.innerText = `${formatTime(timeMin)}:${formatTime(timeSec)}`;
   console.log(timeMin, timeSec);
   timer = timer / 60;
-  
+
   return timer;
 };
 
-const startPauseFunction = () => {
-  if (startPausebtn.innerHTML === "Start") {
+const startPauseFunction = (event) => {
+  // Change The if statement with the check
+  if (intervalStart === null) {
     intervalStart = setInterval(countdown, 1000);
     startPausebtn.innerHTML = "Pause";
   } else {
+    resetTimer(event);
     clearInterval(intervalStart);
     startPausebtn.innerHTML = "Start";
+    intervalStart = null;
+  }
+};
+
+const resetTimer = (event) => {
+  clearInterval(intervalStart);
+  startPausebtn.innerHTML = "Start";
+  intervalStart = null;
+// if the target id is equal to reset change reset
+  if (event.target.id === "reset--btn") {
+    timer = 25;
+    taskTimer.innerText = `${timer}:${"00"}`;
   }
 };
 
 startPausebtn.addEventListener("click", startPauseFunction);
+stopbtn.addEventListener("click", resetTimer);

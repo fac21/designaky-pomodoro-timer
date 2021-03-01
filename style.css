@@ -9,7 +9,8 @@
   align-items: center;
 }
 
-nav, .task--head{
+nav,
+.task--head {
   justify-content: space-between;
   margin-bottom: 10px;
 }
@@ -21,24 +22,22 @@ nav, .task--head{
   align-items: center;
 }
 
-
 .task--head img {
   width: 15px;
 }
 
-
-.set--timer-section>input{
+.set--timer-section > input {
   max-width: 50px;
   text-align: center;
   padding: 0.5px;
 }
 
-.task--btn{
+.task--btn {
   margin-top: 10px;
   width: 60px;
   padding: 2px;
 }
 
-.hidden{
+.hidden {
   display: none;
 }

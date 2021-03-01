@@ -13,9 +13,6 @@ const startPausebtn = document.getElementById("start--pause--btn");
 const stopbtn = document.getElementById("stop--btn");
 const resetbtn = document.getElementById("reset--btn");
 
-
-
-
 let timer = 25;
 let pauseTimer = 5;
 let intervalStart = null;
@@ -57,17 +54,6 @@ const formatTime = (time) => {
 getTime();
 setInterval(getTime, 1000);
 
-/*
-const playSound = () => {
-  if (soundList[code]) {
-    audiOutput.src = `./Project03/${soundList[code]}.wav`;
-    audiOutput.currentTime = 0;
-    audiOutput.play();
-    findFromCode(code);
-  }
-};
-*/
-
 // Countdown
 
 const countdown = () => {
@@ -106,7 +92,9 @@ const resetTimer = (event) => {
     timer = 25;
     taskTimer.innerText = `${timer}:${"00"}`;
   }
-  setTimerSection.classList.toggle('hidden')
+
+  if([...setTimerSection.classList].includes('hidden'))setTimerSection.classList.toggle("hidden");
+  
 };
 
 const resetTaskInterval = () => {
@@ -115,20 +103,14 @@ const resetTaskInterval = () => {
   intervalStart = null;
 };
 
+const setTimer = () => {
+  let minutes = taskMinutesInput.value;
+  let seconds = taskSecondsInput.value;
 
-
-
-const setTimer = ()=>{
-
-
-  let minutes = (taskMinutesInput.value>60?60:taskMinutesInput.value)
-  let seconds = (taskSecondsInput.value>3600?3600:taskSecondsInput.value)
-
-  timer = minutes*60+seconds;
+  timer = minutes * 60 + seconds;
   taskSecondsInput.value = "";
   taskMinutesInput.value = "";
-  timer = timer > 0 ? timer : 25*60;
-  
+  timer = timer <= 0 ? 25 * 60 : timer > 3600 ? 3600 : timer;
 
   let timeMin = Math.floor(timer / 60);
   let timeSec = Math.floor(timer % 60);
@@ -136,13 +118,24 @@ const setTimer = ()=>{
   taskTimer.innerText = `${formatTime(timeMin)}:${formatTime(timeSec)}`;
   timer = timer / 60;
 
-  setTimerSection.classList.toggle('hidden')
+  setTimerSection.classList.toggle("hidden");
 
   resetTaskInterval();
 };
 
-setbtn.addEventListener("click", setTimer)
+setbtn.addEventListener("click", setTimer);
 
 startPausebtn.addEventListener("click", startPauseFunction);
 stopbtn.addEventListener("click", stopTimer);
 resetbtn.addEventListener("click", resetTimer);
+
+/*
+const playSound = () => {
+  if (soundList[code]) {
+    audiOutput.src = `./Project03/${soundList[code]}.wav`;
+    audiOutput.currentTime = 0;
+    audiOutput.play();
+    findFromCode(code);
+  }
+};
+*/

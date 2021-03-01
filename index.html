@@ -13,16 +13,16 @@
       <div id="time"></div>
     </nav>
 
-    <main class="display--flex--column ">
+    <main class="display--flex--column">
       <section>
         <div class="task">
-          <div class="display--flex--row  task--head">
+          <div class="display--flex--row task--head">
             <div class="display--flex--row logo">
               <p>Pomotask</p>
               <img src="/public/images/tomato.png" alt="pomodorologo" />
             </div>
             <div id="task--close">
-                <img src="/public/images/cancel-1.png" alt="close">
+              <img src="/public/images/cancel-1.png" alt="close" />
             </div>
           </div>
 
@@ -30,12 +30,23 @@
             <h2 id="task--name">Create Pomodoro Timer</h2>
             <h3 id="task--timer">25:00</h3>
             <div id="set--timer-section">
-              <input type="number" min="0" max="60" name="task--time--input" id="task--minutes--input">
+              <input
+                type="number"
+                min="0"
+                max="60"
+                name="task--time--input"
+                id="task--minutes--input"
+              />
               <span>:</span>
-              <input type="number" min="0" max="60" name="task--time--input" id="task--seconds--input">
+              <input
+                type="number"
+                min="0"
+                max="60"
+                name="task--time--input"
+                id="task--seconds--input"
+              />
               <button class="" id="set--btn">Set</button>
             </div>
-            
           </div>
 
           <div class="center--flex--row task--btn--container">
@@ -73,7 +84,6 @@
         -->
     </main>
 
-  
     <script src="app.js"></script>
   </body>
 </html>

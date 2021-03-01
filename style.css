@@ -4,13 +4,41 @@
   box-sizing: border-box;
 }
 
-.center--flex {
+.display--flex--row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
 }
+
+nav, .task--head{
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.display--flex--column {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .task--head img {
   width: 15px;
+}
+
+
+.set--timer-section>input{
+  max-width: 50px;
+  text-align: center;
+  padding: 0.5px;
+}
+
+.task--btn{
+  margin-top: 10px;
+  width: 60px;
+  padding: 2px;
+}
+
+.hidden{
+  display: none;
 }

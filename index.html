@@ -8,16 +8,16 @@
     <title>Pomodoro Timer</title>
   </head>
   <body>
-    <nav class="center--flex">
+    <nav class="display--flex--row">
       <div id="date"></div>
       <div id="time"></div>
     </nav>
 
-    <main>
+    <main class="display--flex--column ">
       <section>
         <div class="task">
-          <div class="center--flex task--head">
-            <div class="logo center--flex">
+          <div class="display--flex--row  task--head">
+            <div class="display--flex--row logo">
               <p>Pomotask</p>
               <img src="/public/images/tomato.png" alt="pomodorologo" />
             </div>
@@ -29,10 +29,18 @@
           <div class="task--body">
             <h2 id="task--name">Create Pomodoro Timer</h2>
             <h3 id="task--timer">25:00</h3>
+            <div id="set--timer-section">
+              <input type="number" min="0" max="60" name="task--time--input" id="task--minutes--input">
+              <span>:</span>
+              <input type="number" min="0" max="60" name="task--time--input" id="task--seconds--input">
+              <button class="" id="set--btn">Set</button>
+            </div>
+            
           </div>
 
-          <div class="task--btn--container">
+          <div class="center--flex--row task--btn--container">
             <button class="task--btn" id="start--pause--btn">Start</button>
+            <button class="task--btn" id="stop--btn">Stop</button>
             <button class="task--btn" id="reset--btn">Reset</button>
           </div>
         </div>

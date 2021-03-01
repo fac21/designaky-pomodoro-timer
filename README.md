@@ -1,0 +1,1 @@
+Clearinterval works with variables 

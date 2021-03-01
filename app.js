@@ -2,6 +2,7 @@
 const currentDate = document.getElementById("date");
 const currentTime = document.getElementById("time");
 
+const taskTimer = document.getElementById('task--timer');
 const startPausebtn = document.getElementById("pause--btn");
 
 // Date section and time
@@ -53,12 +54,24 @@ const playSound = () => {
 */
 
 // Countdown
+let timer = 25;
+let intervalStart = null;
 
-const countdown = () => console.log("Hello");
+const countdown = () => {
+  timer = timer * 60 - 1;
+  let timeMin = Math.floor(timer/60)
+  let timeSec = timer%60
+
+  taskTimer.innerText = `${formatTime(timeMin)}:${formatTime(timeSec)}`
+  console.log(timeMin, timeSec);
+  timer = timer / 60;
+  
+  return timer;
+};
 
 const startPauseFunction = () => {
   if (startPausebtn.innerHTML === "Start") {
-    let intervalStart = setInterval(countdown, 1000);
+    intervalStart = setInterval(countdown, 1000);
     startPausebtn.innerHTML = "Pause";
   } else {
     clearInterval(intervalStart);

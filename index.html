@@ -8,52 +8,54 @@
     <title>Pomodoro Timer</title>
   </head>
   <body>
-    <nav class="display--flex--row">
+    <nav class="display--flex-row display--flex-row--spaceBetween">
       <div id="date"></div>
       <div id="time"></div>
     </nav>
 
-    <main class="display--flex--column">
+    <main class="display--flex-column">
       <section class="task">
 
-        <div class="task--head">
-          <div class="display--flex--row task--head">
-            <div class="display--flex--row logo">
+        <div class="task__head">
+          <div class="display--flex-row task__head">
+            <div class="display--flex-row logo">
               <p>Pomotask</p>
-              <img src="/public/images/tomato.png" alt="pomodorologo" />
+              <img class="task__img " src="/public/images/tomato.png" alt="pomodorologo" />
             </div>
-            <div id="task--close">
+            <!-- <div id="task--close">
               <img src="/public/images/cancel-1.png" alt="close" />
-            </div>
+            </div> -->
           </div>
 
-          <div class="display--flex--column task--body">
-            <h2 id="task--name">Create Pomodoro Timer</h2>
-            <h3 id="task--timer">25:00</h3>
-            <div id="set--timer-section">
+          <div class="display--flex-column task__body">
+            <h2 id="task__name">Create Pomodoro Timer</h2>
+            <h3 id="task__timer">25:00</h3>
+            <div id="timer">
               <input
                 type="number"
                 min="0"
                 max="60"
-                name="task--time--input"
-                id="task--minutes--input"
+                name="timer__input-minutes"
+                class="timer__input"
+                id="timer__input-minutes"
               />
               <span>:</span>
               <input
                 type="number"
                 min="0"
                 max="60"
-                name="task--time--input"
-                id="task--seconds--input"
+                name="timer__input-seconds"
+                class="timer__input"
+                id="timer__input-seconds"
               />
-              <button class="" id="set--btn">Set</button>
+              <button class="task__btn" id="timer__input-btn">Set</button>
             </div>
           </div>
 
-          <div class="display--flex--row task--btn--container">
-            <button class="task--btn" id="start--pause--btn">Start</button>
-            <button class="task--btn" id="stop--btn">Stop</button>
-            <button class="task--btn" id="reset--btn">Reset</button>
+          <div class="display--flex-row task__btn-container">
+            <button class="task__btn" id="task__btn-start-pause">Start</button>
+            <button class="task__btn" id="task__btn-stop">Stop</button>
+            <button class="task__btn" id="task__btn-reset">Reset</button>
           </div>
         </div>
       </section>

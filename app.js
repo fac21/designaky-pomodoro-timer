@@ -2,7 +2,7 @@
 const currentDate = document.getElementById("date");
 const currentTime = document.getElementById("time");
 
-const taskTimer = document.getElementById("task--timer");
+const taskTimer = document.getElementById("timer");
 
 const setTimerSection = document.getElementById("set--timer-section");
 const taskMinutesInput = document.getElementById("task--minutes--input");

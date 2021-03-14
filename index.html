@@ -7,30 +7,30 @@
     <link rel="stylesheet" href="style.css" />
     <title>Pomodoro Timer</title>
   </head>
-  <body>
+  <body class="display--flex-column body special" >
     <nav class="display--flex-row display--flex-row--spaceBetween">
       <div id="date"></div>
       <div id="time"></div>
     </nav>
 
     <main class="display--flex-column">
-      <section class="task">
-
+      <section class="task display--flex-column">
         <div class="task__head">
           <div class="display--flex-row task__head">
             <div class="display--flex-row logo">
               <p>Pomotask</p>
-              <img class="task__img " src="/public/images/tomato.png" alt="pomodorologo" />
+              <img
+                class="task__img"
+                src="/public/images/tomato.png"
+                alt="pomodorologo"
+              />
             </div>
-            <!-- <div id="task--close">
-              <img src="/public/images/cancel-1.png" alt="close" />
-            </div> -->
           </div>
 
           <div class="display--flex-column task__body">
             <h2 id="task__name">Create Pomodoro Timer</h2>
             <h3 id="task__timer">25:00</h3>
-            <div id="timer">
+            <div class="display--flex-row" id="timer">
               <input
                 type="number"
                 min="0"
@@ -39,7 +39,6 @@
                 class="timer__input"
                 id="timer__input-minutes"
               />
-              <span>:</span>
               <input
                 type="number"
                 min="0"
@@ -48,7 +47,7 @@
                 class="timer__input"
                 id="timer__input-seconds"
               />
-              <button class="task__btn" id="timer__input-btn">Set</button>
+              <button class="task__btn" id="timer__btn-set">Set</button>
             </div>
           </div>
 

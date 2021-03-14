@@ -2,20 +2,45 @@
 const currentDate = document.getElementById("date");
 const currentTime = document.getElementById("time");
 
-const taskTimer = document.getElementById("timer");
+const taskTimer = document.getElementById("task__timer");
 
-const setTimerSection = document.getElementById("set--timer-section");
-const taskMinutesInput = document.getElementById("task--minutes--input");
-const taskSecondsInput = document.getElementById("task--seconds--input");
-const setbtn = document.getElementById("set--btn");
+const setTimerSection = document.getElementById("timer");
+const taskMinutesInput = document.getElementById("timer__input-minutes");
+const taskSecondsInput = document.getElementById("timer__input-seconds");
+const setbtn = document.getElementById("timer__btn-set");
 
-const startPausebtn = document.getElementById("start--pause--btn");
-const stopbtn = document.getElementById("stop--btn");
-const resetbtn = document.getElementById("reset--btn");
+const startPausebtn = document.getElementById("task__btn-start-pause");
+const stopbtn = document.getElementById("task__btn-stop");
+const resetbtn = document.getElementById("task__btn-reset");
+
+const bodyElement = document.querySelector(".special");
+
+
+console.log(document.querySelector("input"))
 
 let timer = 25;
 let pauseTimer = 5;
 let intervalStart = null;
+
+const imagesArray = [
+  "https://images.unsplash.com/photo-1561454260-8559bd155736?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80",
+  "https://images.unsplash.com/photo-1565191999001-551c187427bb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1587381420844-7bc5f4feec02?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=991&q=80",
+  "https://images.unsplash.com/photo-1562956509-4e2fbef3afcc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+];
+
+// Background part
+const changeBg = ()=>{
+
+  let imageIndex = Math.floor(Math.random()*imagesArray.length);
+
+  bodyElement.style.backgroundImage = `url('${imagesArray[imageIndex]}')`
+
+
+}
+
+
+
 
 // Date section and time
 
@@ -93,8 +118,8 @@ const resetTimer = (event) => {
     taskTimer.innerText = `${timer}:${"00"}`;
   }
 
-  if([...setTimerSection.classList].includes('hidden'))setTimerSection.classList.toggle("hidden");
-  
+  if ([...setTimerSection.classList].includes("hidden"))
+    setTimerSection.classList.toggle("hidden");
 };
 
 const resetTaskInterval = () => {
@@ -128,6 +153,13 @@ setbtn.addEventListener("click", setTimer);
 startPausebtn.addEventListener("click", startPauseFunction);
 stopbtn.addEventListener("click", stopTimer);
 resetbtn.addEventListener("click", resetTimer);
+
+
+changeBg();
+
+setInterval(changeBg,60000)
+
+
 
 /*
 const playSound = () => {

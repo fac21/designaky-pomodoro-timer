@@ -1,5 +1,10 @@
-:root{
-  --maincolor: lightgray;
+:root {
+  --maincolor: hsl(2, 64%, 66%);
+  --secondary-color: hsl(113, 97%, 29%);
+  --font-color: white;
+  --mainWidth: initial;
+  --mainHeigght: 200px;
+  --margin-std:10px;
 }
 
 * {
@@ -10,7 +15,10 @@
 
 .display--flex-row {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   align-items: center;
+  gap:var(--margin-std) calc(var(--margin-std)*2);
 }
 
 .display--flex-column {
@@ -20,47 +28,87 @@
   align-items: center;
 }
 
-
 .display--flex-row--spaceBetween {
   justify-content: space-between;
 }
 
+body {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-image: url("https://media.cntraveler.com/photos/5cb63a5211a45eb1f830373c/16:9/w_1200%2Cc_limit/Wulingyuan-Scenic-Area-China_GettyImages-159228516.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
 
-nav{
-  margin-bottom: 2rem;
-  padding: 1rem;
+  position: relative;
 }
 
-.task{
+nav {
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+
+  color: var(--font-color);
+  background-color: var(--secondary-color);
+  font-weight: 900;
+}
+
+main {
+  margin: 50% auto;
+}
+
+.task {
   background-color: var(--maincolor);
   padding: 10px;
   border-radius: 10px;
+  margin: 2.5rem;
+  min-width: var(--mainWidth);
+  min-height: var(--mainHeigght);
+  color: var(--font-color);
 }
-
 
 .task__img {
   width: 15px;
 }
 
 .timer__input {
-  max-width: 160px;
+  max-width: 100px;
   text-align: center;
   padding: 0.5px;
 }
 
-
-.task__btn-container{
-  justify-content: center;
+.task__btn-container {
+  margin-top: var(--margin-std);
+  margin-bottom: var(--margin-std);
 }
 
 .task__btn {
-  margin: 10px 5px 0px 5px;
   width: 80px;
-  padding: 2px;
+  padding: 9px;
   text-align: center;
   cursor: pointer;
+  border: none;
+
+
+  font-weight: 900;
+  color: var(--font-color);
+  background-color: var(--secondary-color);
 }
 
 .hidden {
   display: none;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    --mainWidth: 460px;
+    --mainHeigght: 200px;
+  }
+
+  .timer__input {
+    min-width: 160px;
+    min-height: 30px;
+  }
 }
